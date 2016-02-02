@@ -5,7 +5,7 @@ app.controller('GameController', function ($scope, $timeout, GameService) {
 	$scope.card2;
 	//Add to $scope a way to track number of guesses, and total matches
 	$scope.guessNum = 0;
-	$scope.matchTotal = 0;
+	$scope.totalMatches = 0;
 	
 	//This is a freebie we are using the GameService to help keep our controller clean. The GameServie will be in charge of creating and shuffling the deck.
 	$scope.deck = GameService.getDeck();
@@ -21,21 +21,54 @@ app.controller('GameController', function ($scope, $timeout, GameService) {
 	//set card1.show = false
 	//card2.show = false
 	//resetCards() 
-	$scope.card = function(card){
-		if($scope.card1 === false && $scope.card2 === false){
+	$scope.selectCard = function (card) {
+		if ($scope.card1) {
+			$scope.card2 = card;
+			card.show = true;
 			
+		} else {
+			$scope.card1 = card;
+			card.show = true;
+			return;
 		}
+
+
+		$timeout(function(){
+			if(!$scope.isMatch($scope.card1, $scope.card2)){
+				$scope.card1.show = false
+				$scope.card2.show = false;				
+			}
+			$scope.resetCards()
+		},1000);
+
 	}
+
+		
+		
+	
 	
 	
 	//write a function to resetCards
 	//it will empty the two card variables above and increase the number of attempts
-	
+	$scope.resetCards = function () {
+		$scope.card1 = "";
+		$scope.card2 = "";
+		$scope.guessNum += 1;
+	}
 	
 	//write a checkVictory function that will set $scope.victory = true if the totalMatches is half the length of the deck
-	
+	$scope.checkVictory = function () {
+		if ($scope.totalMatches >= 26) {
+			$scope.victory = true;
+		}
+	}
 	//write an isMatch function that accepts two cards and returns true or false if the card titles match.
-	
+	$scope.isMatch = function (one, two) {
+		if (one.title === two.title) {
+			$scope.totalmatches += 1;
+			return true;
+		}
+	}
 	
 	//Bonus: Write a function that can reset the game
 	
