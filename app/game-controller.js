@@ -66,6 +66,8 @@ app.controller('GameController', function ($scope, $timeout, GameService) {
 	$scope.isMatch = function (one, two) {
 		if (one.title === two.title) {
 			$scope.totalmatches += 1;
+			one.show = true;
+			two.show = true;
 			return true;
 		}
 	}
