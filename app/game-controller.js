@@ -1,7 +1,11 @@
 app.controller('GameController', function ($scope, $timeout, GameService) {
 	
 	//Create two card variables to keep track of the current selections
+	$scope.card1;
+	$scope.card2;
 	//Add to $scope a way to track number of guesses, and total matches
+	$scope.guessNum = 0;
+	$scope.matchTotal = 0;
 	
 	//This is a freebie we are using the GameService to help keep our controller clean. The GameServie will be in charge of creating and shuffling the deck.
 	$scope.deck = GameService.getDeck();
@@ -17,6 +21,11 @@ app.controller('GameController', function ($scope, $timeout, GameService) {
 	//set card1.show = false
 	//card2.show = false
 	//resetCards() 
+	$scope.card = function(card){
+		if($scope.card1 === false && $scope.card2 === false){
+			
+		}
+	}
 	
 	
 	//write a function to resetCards
