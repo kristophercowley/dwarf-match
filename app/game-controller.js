@@ -25,21 +25,20 @@ app.controller('GameController', function ($scope, $timeout, GameService) {
 		if ($scope.card1) {
 			$scope.card2 = card;
 			card.show = true;
-			
+
 		} else {
 			$scope.card1 = card;
 			card.show = true;
 			return;
 		}
 
-
-		$timeout(function(){
-			if(!$scope.isMatch($scope.card1, $scope.card2)){
+		$timeout(function () {
+			if (!$scope.isMatch($scope.card1, $scope.card2)) {
 				$scope.card1.show = false
-				$scope.card2.show = false;				
+				$scope.card2.show = false;
 			}
 			$scope.resetCards()
-		},1000);
+		}, 1000);
 
 	}
 
@@ -58,20 +57,23 @@ app.controller('GameController', function ($scope, $timeout, GameService) {
 	
 	//write a checkVictory function that will set $scope.victory = true if the totalMatches is half the length of the deck
 	$scope.checkVictory = function () {
-		if ($scope.totalMatches >= 26) {
+		if ($scope.totalMatches === 12) {
 			$scope.victory = true;
 		}
 	}
 	//write an isMatch function that accepts two cards and returns true or false if the card titles match.
 	$scope.isMatch = function (one, two) {
 		if (one.title === two.title) {
-			$scope.totalmatches += 1;
+			$scope.totalMatches += 1;
 			one.show = true;
 			two.show = true;
+			$scope.checkVictory();
 			return true;
 		}
 	}
 	
 	//Bonus: Write a function that can reset the game
-	
+	$scope.resetGame = function () {
+		$scope.deck = GameService.getDeck();
+	}
 });

@@ -17,8 +17,8 @@
 				<div class="flip col-sm-3" ng-repeat="card in deck track by $index" ng-show="!victory">
 					<div class="card" ng-class="{'flipped':card.show}" ng-click="selectCard(card)">
 						<div class="face front">
-							<img src="assets/img/cards/dwarf-face.png" style="background-color: white;" height="120" alt="Logo">
-							<h3>Dwarf Match</h3>
+							<img src="assets/img/cards/sesamestreet.jpg" style="background-color: white;" height="120" alt="Logo">
+							<h3>Sesame Street</h3>
 						</div>
 						<div class="face back">
 							<h3>{{card.title}}</h3>
@@ -34,7 +34,7 @@
 			</div>
 		</div>
 	</div>
-
+	<button ng-click="resetCards()">Reset</button>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
 	<script src="app/app.js"></script>
 	<script src="app/game-service.js"></script>

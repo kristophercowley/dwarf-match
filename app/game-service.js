@@ -4,41 +4,41 @@ app.service('GameService', function () {
 
 	 function Deck() {
 		this.cards = [{
-			title: 'Battle Axe',
-			url: imgRoot + 'battle-axe.png',
+			title: 'Big Bird',
+			url: imgRoot + 'bigbird.png',
 		}, {
-				title: 'Beard',
-				url: imgRoot + 'beard.png',
+				title: 'Elmo',
+				url: imgRoot + 'elmo.png',
 			}, {
-				title: 'Beer Stein',
-				url: imgRoot + 'beer-stein.png',
+				title: 'Grover',
+				url: imgRoot + 'grover.png',
 			}, {
-				title: 'BreastPlate',
-				url: imgRoot + 'breastplate.png',
+				title: 'Zoe',
+				url: imgRoot + 'zoe.png',
 			}, {
-				title: 'Broadsword',
-				url: imgRoot + 'broadsword.png',
+				title: 'Telly',
+				url: imgRoot + 'telly.png',
 			}, {
-				title: 'Brutal Helm',
-				url: imgRoot + 'brutal-helm.png',
+				title: 'Rosita',
+				url: imgRoot + 'rosita.png',
 			}, {
-				title: 'Crossed Axes',
-				url: imgRoot + 'crossed-axes.png',
+				title: 'Ernie',
+				url: imgRoot + 'ernie.png',
 			}, {
-				title: 'Emerald',
-				url: imgRoot + 'emerald.png',
+				title: 'Burt',
+				url: imgRoot + 'brt.png',
 			}, {
-				title: 'Hammer',
-				url: imgRoot + 'flat-hammer.png',
+				title: 'Snuffy',
+				url: imgRoot + 'snuffy.png',
 			}, {
-				title: 'Guantlet',
-				url: imgRoot + 'mailed-fist.png',
+				title: 'Cookie',
+				url: imgRoot + 'cookie.png',
 			}, {
-				title: 'Meat',
-				url: imgRoot + 'meat.png',
+				title: 'Oscar',
+				url: imgRoot + 'oscar.png',
 			}, {
-				title: 'Pick Axe',
-				url: imgRoot + 'mining.png',
+				title: 'Count',
+				url: imgRoot + 'count.png',
 			}];
 	}
 
