@@ -43,10 +43,6 @@ app.controller('GameController', function($scope, $timeout, GameService) {
     }
 
 
-
-
-
-
     //write a function to resetCards
     //it will empty the two card variables above and increase the number of attempts
     $scope.resetCards = function() {
@@ -78,6 +74,6 @@ app.controller('GameController', function($scope, $timeout, GameService) {
         $scope.attempts = 0;
         $scope.totalMatches = 0;
         $scope.deck = GameService.getDeck();
-        console.log($scope.deck)
+        // console.log($scope.deck)
     }
 });
