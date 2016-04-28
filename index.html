@@ -11,19 +11,21 @@
 <body ng-controller="GameController">
     <div class="container-fluid">
         <div class="row">
-            <h1>Found Pairs: {{totalMatches}}</h1>
+            <h1 style="text-align:center; background-color:white">Found Pairs: {{totalMatches}}
+                <button style="float:right" class="btn btn-large btn-danger" ng-click="resetGame()">Reset The Game</button>
+        </h1>
         </div>
         <div class="row text-center">
             <div class="col-sm-10 col-sm-offset-1">
                 <div class="flip col-sm-3" ng-repeat="card in deck track by $index" ng-show="!victory">
                     <div class="card" ng-class="{'flipped':card.show}" ng-click="selectCard(card)">
                         <div class="face front">
-                            <img src="assets/img/cards/sesamestreet.jpg" style="background-color: white;" height="120" alt="Logo">
+                            <img src="assets/img/cards/sesamestreet.jpg" style="background-color: white;" height="150" alt="Logo">
                             <h3>Sesame Street</h3>
                         </div>
                         <div class="face back">
                             <h3>{{card.title}}</h3>
-                            <img ng-src="{{card.url}}" height="80" alt="{{card.title}}">
+                            <img ng-src="{{card.url}}" height="140" alt="{{card.title}}">
                         </div>
                     </div>
                 </div>
@@ -35,7 +37,6 @@
             </div>
         </div>
     </div>
-    <button ng-click="resetGame()">Reset</button>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
     <script src="app/app.js"></script>
     <script src="app/game-service.js"></script>
